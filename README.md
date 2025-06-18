@@ -29,6 +29,13 @@ The goal is to build an NLP classifier that understands the formality and tone o
 
 ---
 
+## Background & Inspiration
+
+This project was inspired in part by recent research on Japanese formality classification using deep learning techniques. A 2023 study demonstrated that transformer-based models can effectively distinguish between different levels of politeness in Japanese text, using a combination of manually annotated data and automatically mined formal speech.
+
+Building on that foundation, this project explores the application of similar techniques in a simplified and reproducible setting.
+
+
 ## Status
 
 Currently in the data collection and research phase.  
