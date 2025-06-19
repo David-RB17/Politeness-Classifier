@@ -192,3 +192,24 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Model artifacts
+*.pt
+*.safetensors
+*.bin
+*.onnx
+optimizer.pt
+*.ckpt
+
+# Hugging Face models
+models/
+outputs/
+
+# Native libs
+*.dll
+*.lib
+*.so
+
+# Environment folders
+.venv/
+__pycache__/
