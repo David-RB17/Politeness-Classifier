@@ -1,48 +1,46 @@
-# Japanese Politeness Level Classifier (WIP)
+# Japanese Formality Classifier (WIP)
 
-This project aims to develop a deep learning model that can classify short Japanese text inputs based on their politeness level:
-
-- 0 – Casual (タメ口)
-- 1 – Neutral (普通)
-- 2 – Polite / Keigo (敬語)
+This project aims to develop a deep learning model that can classify short Japanese text inputs as either **formal** or **informal**.
 
 ---
 
 ## Goal
 
-The goal is to build an NLP classifier that understands the formality and tone of Japanese sentences. This will involve:
+The goal is to build an NLP classifier that understands the formality and tone of Japanese sentences. This involves:
 
 - Collecting and annotating a custom dataset from Japanese subtitles, dialogues, or transcripts
 - Preprocessing Japanese text using tokenizers like MeCab, SudachiPy, or Fugashi
 - Training a classification model (starting with BERT for Japanese)
-- Evaluating how well the model can distinguish subtle shifts in tone
+- Evaluating the model’s ability to distinguish between **formal** (敬語・丁寧語) and **informal** (ため口・カジュアル) language
 
 ---
 
 ## Research & Development Tasks
 
-- Research politeness markers and speech patterns in Japanese (e.g., verb forms, honorifics)
-- Investigate reliable sources of conversational Japanese data (anime/drama subs, chat logs)
+- Research formality markers and speech patterns in Japanese (e.g., verb endings, honorifics, particles)
+- Investigate reliable sources of conversational Japanese data (anime/drama subs, chat logs, games)
 - Experiment with both traditional ML (e.g., TF-IDF + Logistic Regression) and transformer-based models
-- Explore tokenization and text normalization for Japanese input
-- Optionally: build a small Streamlit app for real-time predictions
+- Explore tokenization and text normalization techniques for Japanese
+- Optionally: Build a Streamlit or web-based app for real-time predictions
 
 ---
 
 ## Background & Inspiration
 
-This project was inspired in part by recent research on Japanese formality classification using deep learning techniques. A 2023 study demonstrated that transformer-based models can effectively distinguish between different levels of politeness in Japanese text, using a combination of manually annotated data and automatically mined formal speech.
+This project is inspired by recent studies on Japanese politeness and formality classification using deep learning. Prior research has shown that transformer models (e.g., BERT) can effectively capture nuances in Japanese tone and register, especially when fine-tuned on curated or labeled datasets.
 
-Building on that foundation, this project explores the application of similar techniques in a simplified and reproducible setting.
+By simplifying the classification into **binary formality levels**, this project aims to deliver a lightweight yet practical tool for tone-aware Japanese NLP applications.
 
+---
 
 ## Status
 
-Currently in the data collection and research phase.  
-Model training and deployment will follow.
+🟡 **Currently in the data collection and research phase**  
+Model training and evaluation will follow soon.
 
 ---
 
 ## Author
 
-David — Applied Data Science & AI student
+David — Applied Data Science & AI student  
+Hogeschool Rotterdam
