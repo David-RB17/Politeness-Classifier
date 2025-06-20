@@ -35,8 +35,19 @@ By simplifying the classification into **binary formality levels**, this project
 
 ## Status
 
-🟡 **Currently in the data collection and research phase**  
-Model training and evaluation will follow soon.
+**Current Model:**  
+Fine-tuned Japanese BERT (`cl-tohoku/bert-base-japanese`) on ~800 manually labeled sentences, simplified to **binary classification**:
+- `0` = Informal (タメ口 / 普通)
+- `1` = Formal (敬語)
+
+**Evaluation Results (Test Set):**
+- **Accuracy:** 96%
+- **F1 Score:** 0.96
+- **Precision:** 0.98 (Formal), 0.94 (Informal)
+- **Recall:** 0.92 (Formal), 0.99 (Informal)
+
+**App:**  
+A working **Streamlit app** has been built for live testing of predictions. Input a Japanese sentence, and the app classifies it as Formal or Informal.
 
 ---
 

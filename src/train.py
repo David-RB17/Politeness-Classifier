@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import torch
+import os
 from transformers import (
     AutoTokenizer,
     AutoModelForSequenceClassification,
@@ -13,12 +14,22 @@ from sklearn.model_selection import train_test_split
 
 # Config
 MODEL_NAME = "cl-tohoku/bert-base-japanese"
-DATA_PATH = r"data/processed/BunnyGirl300-Preprocessed.csv"
+DATA_PATH = r"G:\Python Projects\politeness-classifier-jp\models"
 
 
 
-NUM_LABELS = 3  # or 2 if you switch to binary (formal/informal)
-SAVE_PATH = r"G:\Python Projects\politeness-classifier-jp\models\bert-finetunedv2"
+NUM_LABELS = 2 
+SAVE_PATH = r"G:\Python Projects\politeness-classifier-jp\models\bert-models"
+
+# Create incrementing subfolder
+i = 1
+while True:
+    numbered_path = f"{SAVE_PATH}_{i:03d}"
+    if not os.path.exists(numbered_path):
+        os.makedirs(numbered_path)
+        SAVE_PATH = numbered_path
+        break
+    i += 1
 
 # 1. Load data
 df = pd.read_csv(DATA_PATH)

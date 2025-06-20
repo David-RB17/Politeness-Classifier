@@ -10,12 +10,17 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trai
 from datasets import Dataset
 from sklearn.model_selection import train_test_split
 
+# === FIND LATEST MODEL FOLDER ===
+BASE_MODEL_PATH = r"G:\Python Projects\politeness-classifier-jp\models"
+model_folders = [f for f in os.listdir(BASE_MODEL_PATH) if f.startswith("bert-models")]
+latest_model = sorted(model_folders)[-1]  # assumes _001, _002, etc.
+MODEL_PATH = os.path.join(BASE_MODEL_PATH, latest_model)
+
 # === CONFIG ===
-MODEL_PATH = r"G:\Python Projects\politeness-classifier-jp\models\bert-finetunedv2"
-DATA_PATH = r"data/processed/BunnyGirl300-Preprocessed.csv"
-OUTPUT_DIR = MODEL_PATH  # saves alongside the model
-NUM_LABELS = 3
-CLASS_NAMES = ["Casual", "Neutral", "Polite"]  # change to ["Informal", "Formal"] if binary
+DATA_PATH = r"data/processed/BunnyGirl800-Preprocessed-binary.csv"
+OUTPUT_DIR = MODEL_PATH
+NUM_LABELS = 2
+CLASS_NAMES = ["Informal", "Formal"]
 
 # === LOAD MODEL & TOKENIZER ===
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
