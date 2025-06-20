@@ -18,6 +18,6 @@ def predict_formality(text, model, tokenizer, threshold=0.5):
     predicted_label = label_map[pred.item()]
     
     if confidence.item() >= threshold:
-        return f"{text} is **{predicted_label}** (confidence: {confidence.item():.2f})"
+        return f"{text} is {predicted_label} japanese"
     else:
         return f"Not confident enough to classify — confidence: {confidence.item():.2f}"

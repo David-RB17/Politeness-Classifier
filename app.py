@@ -5,7 +5,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from src.predict import predict_formality
 
 # === Load model and tokenizer ===
-MODEL_PATH = r"G:\Python Projects\politeness-classifier-jp\models\bert-finetunedv2"
+# MODEL_PATH = r"G:\Python Projects\politeness-classifier-jp\models\bert-finetunedv2"
+MODEL_PATH = "David-RB/japanese-formality-classifier"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
 model.eval()

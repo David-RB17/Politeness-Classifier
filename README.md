@@ -1,4 +1,4 @@
-# Japanese Formality Classifier (WIP)
+# Japanese Formality Classifier
 
 This project aims to develop a deep learning model that can classify short Japanese text inputs as either **formal** or **informal**.
 
@@ -9,8 +9,8 @@ This project aims to develop a deep learning model that can classify short Japan
 The goal is to build an NLP classifier that understands the formality and tone of Japanese sentences. This involves:
 
 - Collecting and annotating a custom dataset from Japanese subtitles, dialogues, or transcripts
-- Preprocessing Japanese text using tokenizers like MeCab, SudachiPy, or Fugashi
-- Training a classification model (starting with BERT for Japanese)
+- Preprocessing Japanese text using a MeCab-based tokenizer (`fugashi`) compatible with BERT
+- Training a classification model (starting with `cl-tohoku/bert-base-japanese`)
 - Evaluating the model’s ability to distinguish between **formal** (敬語・丁寧語) and **informal** (ため口・カジュアル) language
 
 ---
@@ -19,9 +19,8 @@ The goal is to build an NLP classifier that understands the formality and tone o
 
 - Research formality markers and speech patterns in Japanese (e.g., verb endings, honorifics, particles)
 - Investigate reliable sources of conversational Japanese data (anime/drama subs, chat logs, games)
-- Experiment with both traditional ML (e.g., TF-IDF + Logistic Regression) and transformer-based models
-- Explore tokenization and text normalization techniques for Japanese
-- Optionally: Build a Streamlit or web-based app for real-time predictions
+- Explore tokenization and text normalization techniques for Japanese (used `fugashi` via AutoTokenizer)
+- Build a Streamlit-based app for real-time predictions
 
 ---
 
@@ -29,14 +28,14 @@ The goal is to build an NLP classifier that understands the formality and tone o
 
 This project is inspired by recent studies on Japanese politeness and formality classification using deep learning. Prior research has shown that transformer models (e.g., BERT) can effectively capture nuances in Japanese tone and register, especially when fine-tuned on curated or labeled datasets.
 
-By simplifying the classification into **binary formality levels**, this project aims to deliver a lightweight yet practical tool for tone-aware Japanese NLP applications.
+By simplifying the classification into **binary formality levels**, this project delivers a lightweight yet practical tool for tone-aware Japanese NLP applications.
 
 ---
 
 ## Status
 
 **Current Model:**  
-Fine-tuned Japanese BERT (`cl-tohoku/bert-base-japanese`) on ~800 manually labeled sentences, simplified to **binary classification**:
+Fine-tuned Japanese BERT (`cl-tohoku/bert-base-japanese`) on ~800 manually labeled sentences from japanese anime subtitles, reduced to a **binary classification**:
 - `0` = Informal (タメ口 / 普通)
 - `1` = Formal (敬語)
 
@@ -47,7 +46,7 @@ Fine-tuned Japanese BERT (`cl-tohoku/bert-base-japanese`) on ~800 manually label
 - **Recall:** 0.92 (Formal), 0.99 (Informal)
 
 **App:**  
-A working **Streamlit app** has been built for live testing of predictions. Input a Japanese sentence, and the app classifies it as Formal or Informal.
+A fully functional **Streamlit app** is included for interactive testing. Users can input Japanese sentences and instantly receive predictions.
 
 ---
 
