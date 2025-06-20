@@ -45,7 +45,8 @@ Fine-tuned Japanese BERT (`cl-tohoku/bert-base-japanese`) on ~800 manually label
 - **Precision:** 0.98 (Formal), 0.94 (Informal)
 - **Recall:** 0.92 (Formal), 0.99 (Informal)
 
-**App:**  
+## App
+  
 A fully functional **Streamlit app** is included for interactive testing. Users can input Japanese sentences and instantly receive predictions.
 Check out the live Streamlit app here:  
 [Japanese Formality Classifier](https://politeness-classifier-jp.streamlit.app/)
